@@ -1,0 +1,42 @@
+﻿@model Guarderia.Models.ComidaPn
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ComidaPn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NinoNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NinoNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaComida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaComida)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

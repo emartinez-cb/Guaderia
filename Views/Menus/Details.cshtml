@@ -1,0 +1,58 @@
+﻿@model Guarderia.Models.Menus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Menus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Plato1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plato1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plato2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plato2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plato3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plato3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingrediente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ingrediente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

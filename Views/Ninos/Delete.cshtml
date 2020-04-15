@@ -1,0 +1,64 @@
+﻿@model Guarderia.Models.Ninos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ninos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alergias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alergias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDeBaja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDeBaja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDeNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDeNacimiento)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

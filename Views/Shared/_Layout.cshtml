@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Guarderia Solecito</title>
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script type="text/javascript">
+        function queHago() {
+            document.getElementById("form-inicio").style.display = "block";
+            document.getElementById("form-niños").style.display = "none";
+            document.getElementById("form-personas").style.display = "none";
+            document.getElementById("form-menus").style.display = "none";
+        }
+        function queHago2() {
+            document.getElementById("form-inicio").style.display = "none";
+            document.getElementById("form-niños").style.display = "block";
+            document.getElementById("form-personas").style.display = "none";
+            document.getElementById("form-menus").style.display = "none";
+        }
+        function queHago3() {
+           document.getElementById("pageSubmenu").style.height = "0px";
+       
+        }
+        function queHago4() {
+            document.getElementById("form-inicio").style.display = "none";
+            document.getElementById("form-niños").style.display = "none";
+            document.getElementById("form-personas").style.display = "none";
+            document.getElementById("form-menus").style.display = "block";
+        }
+        function showMonto() {
+            var checkBox = document.getElementById("myCheck");
+            if (checkBox.checked == true) {
+                document.getElementById("monto").style.display = "block";
+            } else {
+                document.getElementById("monto").style.display = "none";
+            }
+
+        }
+       
+    </script>
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(/Content/img/logo.jpg);"></a>
+                <div style="font-size:large;text-align:center;color:#f8b739;">Guarderia Solecito</div>
+                <ul class="list-unstyled components mb-5">
+                    <li id="inicio" >
+                        <a href="@Url.Action("Index", "Home")" onclick="queHago();">Inicio</a>
+
+                    </li>
+                    <li id="niño">
+                        <a href="@Url.Action("Index", "Ninos")" onclick="queHago2();">Niños</a>
+
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse"  class="dropdown-toggle">Personas</a>
+                        <ul  class="list-unstyled" style="height:92px;" id="pageSubmenu">
+                            <li>
+                                <a href="@Url.Action("Index", "Pagadores")">Pagadores</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Recogedores")">Recogedores</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="menu">
+                        <a href="@Url.Action("Index", "Menus")" onclick="queHago4();">Menus</a>
+
+                    </li>
+                </ul>
+                <div class="footer">
+                    <p style="margin: 256px 0 10px;">
+                        Copyright &copy;
+                        <script type="a51d76c0906de78410055b9a-text/javascript">document.write(new Date().getFullYear());</script> Guarderia Solecito 
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+         
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

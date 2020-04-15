@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div id="form-menus" style="margin-top:2%;">
+    <div style="background-color:white;text-align:center;" class="jumbotron">
+        <h1 style="color:#f8b739;">Menus</h1>
+
+    </div>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputMenu">Menu</label>
+                <input type="text" class="form-control" id="inputMenu" placeholder="#00123">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPlato">Plato</label>
+                <input type="text" class="form-control" id="inputPlato" placeholder="Langostini">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputIngredientes">Ingredientes</label>
+            <select multiple class="form-control" style="height:70px;" id="inputIngrediente">
+                <option>Ajo</option>
+                <option>Puerro</option>
+                <option>Cebolla</option>
+                <option>Perejil</option>
+                <option>Sopita</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Insertar</button>
+    </form>
+</div>
+

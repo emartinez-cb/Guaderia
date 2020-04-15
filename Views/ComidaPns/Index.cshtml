@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Guarderia.Models.ComidaPn>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2>Guarderia Solecito</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NinoNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaComida)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Matricula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NinoNombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaComida)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

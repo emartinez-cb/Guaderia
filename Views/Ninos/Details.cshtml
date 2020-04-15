@@ -1,0 +1,58 @@
+﻿@model Guarderia.Models.Ninos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ninos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alergias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alergias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDeBaja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDeBaja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDeNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDeNacimiento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

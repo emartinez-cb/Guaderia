@@ -1,0 +1,77 @@
+﻿@model Guarderia.Models.Ninos
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div id="form-niños" style="margin-top:2%;">
+        <div style="background-color:white;text-align:center;" class="jumbotron">
+            <h1 style="color:#f8b739;">Niños</h1>
+        </div>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Nombre)
+                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Alergias)
+                    @Html.EditorFor(model => model.Alergias, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Matricula, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Matricula)
+                    @Html.EditorFor(model => model.Matricula, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Matricula, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FechaDeNacimiento)
+                @Html.EditorFor(model => model.FechaDeNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FechaDeNacimiento, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FechaDeIngreso)
+                @Html.EditorFor(model => model.FechaDeIngreso, new { htmlAttributes = new { @class = "form-control", @Value= DateTime.Now.ToString("dd/MM/yyyy"), @ReadOnly = true} })
+                @Html.ValidationMessageFor(model => model.FechaDeIngreso, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-6">
+                    @Html.LabelFor(model => model.FechaDeBaja)
+                    @Html.EditorFor(model => model.FechaDeBaja, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="col-md-6 mb-6">
+                    <label for="inputRecogidoPor">Recogido Por: </label>
+                    @Html.DropDownListFor(model => model.Recogedor, new List<SelectListItem>
+          {
+                              new SelectListItem() {Text = "Padre", Value="Padre"},
+                              new SelectListItem() {Text = "Cuidador", Value="Cuidador"},
+                              //new SelectListItem() {Text = "Exemplo3", Value="Exemplo3"}
+          })
+                    <div class="invalid-tooltip">
+                        Porfavor seleccione un recogedor valido.
+                    </div>
+                </div>
+            </div>
+            <button type="submit" value="Create" class="btn btn-primary">Insertar</button>
+        </form>
+    </div>
+
+ 
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

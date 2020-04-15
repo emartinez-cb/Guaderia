@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Guarderia.Models.Ninos>
+
+@{
+    ViewBag.Title = "Niños";
+}
+
+<h2>Guarderia Solecito</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alergias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaDeBaja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaDeIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaDeNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recogedor)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Alergias)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaDeBaja)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Matricula)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaDeIngreso)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaDeNacimiento)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Recogedor)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>
